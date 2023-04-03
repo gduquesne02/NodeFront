@@ -25,11 +25,17 @@ export class StudentDetailsComponent {
   ngOnInit(): void {
     if(this.studentId){
       this.student$ = this.studentService.getById(this.studentId);
+
     }
    
   }
 
   goBack(){
     this.location.back();
+  }
+
+  showRecievedValue(value: boolean){
+    console.log(value);
+    
   }
 }

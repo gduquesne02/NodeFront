@@ -8,6 +8,7 @@ import { StudentListComponent } from './pages/student-list/student-list.componen
 import { StudentService } from './services/student.service';
 import { StudentFormComponent } from './components/student-form/student-form.component';
 import { StudentDetailsComponent } from './pages/student-details/student-details.component';
+import { StudentCardComponent } from './component/student-card/student-card.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StudentDetailsComponent } from './pages/student-details/student-details
     StudentComponent,
     StudentListComponent,
     StudentFormComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    StudentCardComponent
   ],
   imports: [
     CommonModule,
