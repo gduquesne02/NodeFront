@@ -1,28 +1,45 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from "./core/components/not-found/not-found.component";
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'students',
-    pathMatch: 'full'
+    redirectTo: 'lane',
+    pathMatch: 'full',
   },
   {
-    path: 'students',
-    loadChildren: () => import('./student/student.module').then(m => m.StudentModule)
+    path: 'lane',
+    loadChildren: () => import('./lane/lane.module').then((m) => m.LaneModule),
   },
   {
-    path: "**",
-    component: NotFoundComponent
+    path: 'lane/:id',
+    loadChildren: () => import('./lane/lane.module').then((m) => m.LaneModule),
   },
 
- ];
+  
+  {
+    path: 'champion',
+    loadChildren: () =>
+      import('./champion/champion.module').then((m) => m.ChampionModule),
+  },
+  {
+    path: 'champion/lane/:championid',
+    loadChildren: () =>
+      import('./champion/champion.module').then((m) => m.ChampionModule),
+  },
+  {
+    path: ':id',
+    loadChildren: () => import('./champion/champion.module').then((m) => m.ChampionModule),
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}
