@@ -1,5 +1,4 @@
 export const environment = {
     production: true,
-   iutApiBaseUrl: 'http://localhost:3000'
-
+   iutApiBaseUrl: 'https://node-back-vert.vercel.app'
 };
